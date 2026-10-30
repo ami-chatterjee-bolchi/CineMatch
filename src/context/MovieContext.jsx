@@ -65,6 +65,7 @@ export const MovieProvider = ({ children }) => {
     const loadFavorites = useCallback(async () => {
         if (!user) {
             setFavorites([]);
+            alert("To add favourite, Sign in first.");
             return;
         }
 
