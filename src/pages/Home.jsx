@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import MovieCard from "../components/MovieCard";
 import MovieFinder from "../components/MovieFinder";
 import "../css/Home.css";
@@ -34,7 +34,14 @@ function Home() {
         loadPopularMovies();
     }, []);
 
+    const resultsRef = useRef(null);
+
     const handleSearch = async (e) => {
+
+        resultsRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+        });
         e.preventDefault();
 
         const query = searchQuery.trim();

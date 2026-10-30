@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "../css/MovieFinder.css";
 
 const moods = [
@@ -46,6 +46,7 @@ function MovieFinder({ onRecommend, loading }) {
     const [providerId, setProviderId] = useState("");
     const [selectedGenre, setSelectedGenre] = useState("");
     const [selectedLanguage, setSelectedLanguage] = useState("");
+    const resultsRef = useRef(null);
 
     const activeCount = [
         minRating !== "0",
@@ -56,6 +57,7 @@ function MovieFinder({ onRecommend, loading }) {
     ].filter(Boolean).length;
 
     const applyFilters = (genre = selectedGenre) => {
+
         onRecommend(genre, Number(minRating), {
             runtime,
             platform: providerId,
@@ -200,8 +202,15 @@ function MovieFinder({ onRecommend, loading }) {
                         <button
                             type="button"
                             className="find-btn"
-                            onClick={() => applyFilters()}
-                            disabled={loading}
+                            onClick={() => {
+                                applyFilters();
+                                setTimeout(() => {
+                                    resultsRef.current?.scrollIntoView({
+                                        behavior: "smooth",
+                                        block: "start"
+                                    });
+                                }, 300);
+                            }}
                         >
                             {loading ? "Finding movies..." : "Find Movies →"}
                         </button>
