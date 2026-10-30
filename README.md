@@ -73,41 +73,27 @@ The following section is reserved for screenshots of the application. Add images
 
 ### 1. Home Page and Movie Discovery
 
-<!-- Upload your home page screenshot here. -->
-
 ![CineMatch Home Page](screenshots/home.png)
 
 ### 2. Mood-Based Discovery and Filters
 
-<!-- Upload your movie finder screenshot here. -->
-
-![CineMatch Movie Finder](screenshots/movie-finder.png)
+![CineMatch Movie Finder](screenshots/home3.png)
 
 ### 3. Movie Details and Similar Movies
 
-<!-- Upload your movie details screenshot here. -->
-
-![CineMatch Movie Details](screenshots/movie-details.png)
+![CineMatch Movie Details](screenshots/movie.png)
 
 ### 4. Streaming Availability
 
-<!-- Upload your streaming availability screenshot here. -->
-
-![CineMatch Streaming Availability](screenshots/streaming-availability.png)
+![CineMatch Streaming Availability](screenshots/modal.png)
 
 ### 5. Favourites Collection
 
-<!-- Upload your favourites page screenshot here. -->
-
-![CineMatch Favourites](screenshots/favourites.png)
+![CineMatch Favourites](screenshots/fav.png)
 
 ### 6. Authentication
 
-<!-- Upload your login or registration screenshot here. -->
-
-![CineMatch Authentication](screenshots/authentication.png)
-
-**To add screenshots:** Create a `screenshots/` directory in the repository, upload your images, and ensure the Markdown paths match their actual locations.
+![CineMatch Authentication](screenshots/login.png)
 
 ---
 
