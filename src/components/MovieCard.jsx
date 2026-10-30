@@ -12,7 +12,9 @@ function MovieCard({ movie, minRating = 0 }) {
     const [selectedMovie, setSelectedMovie] = useState(movie);
     const [selectedDetails, setSelectedDetails] = useState(details);
 
-    const { addToFavorites, removeFromFavorites, isFavorite } = useMovieContext();
+
+
+    const { user, addToFavorites, removeFromFavorites, isFavorite } = useMovieContext();
     const movieId = movie?.id ?? movie?.tmdb_id;
     const favorite = isFavorite(movieId);
 
@@ -44,6 +46,11 @@ function MovieCard({ movie, minRating = 0 }) {
 
     function onFavouriteClick(e) {
         e.preventDefault();
+        if (!user) {
+            alert("Please sign in to add movies to your favourites!");
+            return;
+        }
+
         if (favorite) removeFromFavorites(movieId);
         else addToFavorites({ ...movie, ...details, id: movieId });
     }
@@ -84,6 +91,7 @@ function MovieCard({ movie, minRating = 0 }) {
                             title={favorite ? "Remove from favourites" : "Add to favourites"}
                         >
                             {favorite ? "♥" : "♡"}
+
                         </button>
                     </div>
                     {loading && <div className="poster-loading"><span className="poster-spinner"></span></div>}
