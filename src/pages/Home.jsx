@@ -35,13 +35,17 @@ function Home() {
     }, []);
 
     const resultsRef = useRef(null);
+    useEffect(() => {
+        if (hasSearched && !loading) {
+            resultsRef.current?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }
+    }, [hasSearched, loading]);
 
     const handleSearch = async (e) => {
 
-        resultsRef.current?.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-        });
         e.preventDefault();
 
         const query = searchQuery.trim();
@@ -190,7 +194,7 @@ function Home() {
             </section>
 
             {/* Movie Discovery Section */}
-            <section className="discovery-section">
+            <section className="discovery-section" ref={resultsRef}>
                 <div className="section-heading">
                     <div className="section-heading-left">
                         <span className="section-eyebrow">
