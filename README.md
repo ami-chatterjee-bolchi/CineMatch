@@ -609,7 +609,7 @@ The frontend supports:
 - Email and password registration.
 - Email and password sign-in.
 - Sign-out.
-- Google sign-in when the Google provider is configured.
+- Google sign-in when the Google provider is configured
 
 To enable these features:
 
