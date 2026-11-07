@@ -75,7 +75,7 @@ The following section is reserved for screenshots of the application. Add images
 
 ![CineMatch Home Page](screenshots/home.png)
 
-### 2. Mood-Based Discovery and Filters
+### 2. Mood-Based Discovery and Filter
 
 ![CineMatch Movie Finder](screenshots/home3.png)
 
